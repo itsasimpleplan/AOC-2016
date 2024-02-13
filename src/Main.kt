@@ -21,7 +21,7 @@ fun day2(text2: String, part: Int): String {
     val max: Int
     var a: Int
     var b: Int
-    var code: String = ""
+    var code = ""
     if(part == 2) {
         val first: CharArray = charArrayOf('0', '0', '1', '0', '0')
         val second: CharArray = charArrayOf('0', '2', '3', '4', '0')
@@ -45,17 +45,17 @@ fun day2(text2: String, part: Int): String {
     }
 
     lines.forEach {
-        it.forEach({ it ->
-            if(it == 'U' && b>0 && keypad[a][b-1]!= '0'){
-                b = b-1
-            }else if(it == 'D' && b<max && keypad[a][b+1]!= '0'){
-                b = b+1
-            }else if (it == 'L' && a>0 && keypad[a-1][b]!= '0'){
-                a = a -1
-            }else if(it == 'R' && a <max && keypad[a+1][b]!= '0'){
-                a = a+1
+        it.forEach { it ->
+            if (it == 'U' && b > 0 && keypad[a][b - 1] != '0') {
+                b = b - 1
+            } else if (it == 'D' && b < max && keypad[a][b + 1] != '0') {
+                b = b + 1
+            } else if (it == 'L' && a > 0 && keypad[a - 1][b] != '0') {
+                a = a - 1
+            } else if (it == 'R' && a < max && keypad[a + 1][b] != '0') {
+                a = a + 1
             }
-        })
+        }
 
         code=code+keypad[b][a]
     }

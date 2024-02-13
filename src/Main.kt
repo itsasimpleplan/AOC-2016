@@ -70,10 +70,8 @@ private fun day1_2(text:String): Int{
     var visited = arrayOf<Pair<Int, Int>>()
 
     visited += Pair(a, b)
-    var foundFirst = false
 
     for (value in values) {
-        if(foundFirst){break}
         val dir = value[0]
         var steps = value.substring(1).toInt()
         if (dir == 'R') {
@@ -181,7 +179,7 @@ private fun day1_1(text:String):Int {
 
     for (value in values) {
         val dir = value[0]
-        var steps = value.substring(1).toInt()
+        val steps = value.substring(1).toInt()
         if (dir == 'R') {
             if (face == "N") {
                 face = "E"
